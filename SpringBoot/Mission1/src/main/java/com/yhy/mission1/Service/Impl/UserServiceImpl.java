@@ -29,5 +29,6 @@ public class UserServiceImpl implements UserService {
 
         //添加
         userMapper.add(username,password);
+
     }
 }
