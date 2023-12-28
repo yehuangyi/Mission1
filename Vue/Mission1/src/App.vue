@@ -1,6 +1,7 @@
 <template>
 <!--  html-->
 
+<<<<<<< HEAD
   <div class="app">
       <h1>
           你好啊！
@@ -8,6 +9,16 @@
       <Person/>
       <Car/>
   </div>
+=======
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+    </div>
+  </header>
+<!--对方的丰富的-->
+  <main>
+    <TheWelcome />
+  </main>
+>>>>>>> a2ba376be112fa4bf1cef9bc320bb1068775860b
 </template>
 
 <script lang="ts">
