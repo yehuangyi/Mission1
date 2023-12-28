@@ -11,7 +11,7 @@ import TheWelcome from './components/TheWelcome.vue'
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-
+<!--对方的丰富的-->
   <main>
     <TheWelcome />
   </main>
