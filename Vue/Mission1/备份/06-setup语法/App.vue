@@ -6,17 +6,15 @@
           你好啊！
       </h1>
       <Person/>
-      <Car/>
   </div>
 </template>
 
 <script lang="ts">
 // js ts
 import Person from "./Components/Person.vue";
-import Car from "@/Components/Car.vue";
   export default {
       name : 'App',//组件名
-      components:{Car, Person}
+      components:{Person}
   }
 
 </script>
