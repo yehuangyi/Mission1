@@ -1,44 +1,25 @@
 <template>
-<!--  html-->
-
-<<<<<<< HEAD
-  <div class="app">
-      <h1>
-          你好啊！
-      </h1>
-      <Person/>
-      <Car/>
+  <div id="app">
+    <router-view></router-view>
   </div>
-=======
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-<!--对方的丰富的-->
-  <main>
-    <TheWelcome />
-  </main>
->>>>>>> a2ba376be112fa4bf1cef9bc320bb1068775860b
 </template>
 
 <script lang="ts">
-// js ts
-import Person from "./Components/Person.vue";
-import Car from "@/Components/Car.vue";
+import Login from "@/Components/Login.vue";
   export default {
-      name : 'App',//组件名
-      components:{Car, Person}
-  }
-
+      components:{Login,
+  },
+};
 </script>
 
 
 <style>
   /*样式*/
-.app{
+/*.app{
     background: lightpink;
     box-shadow: 0 0 10px;
     border-radius: 10px;
     padding: 20px;
-}
+}*/
+
 </style>
