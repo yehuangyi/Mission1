@@ -6,6 +6,8 @@ import com.yhy.mission1.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -30,5 +32,21 @@ public class UserServiceImpl implements UserService {
         //添加
         userMapper.add(username,password);
 
+    }
+
+    @Override
+    public ArrayList<User> findALl() {
+        ArrayList<User> users = userMapper.findAll();
+        return users;
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        userMapper.delete(id);
+    }
+
+    @Override
+    public void save(User user) {
+        userMapper.save(user);
     }
 }
