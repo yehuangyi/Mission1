@@ -3,6 +3,8 @@ package com.yhy.mission1.Mapper;
 import com.yhy.mission1.Entity.Good;
 import org.apache.ibatis.annotations.*;
 
+import java.util.ArrayList;
+
 @Mapper
 public interface GoodMapper {
     @Insert("insert  into  good(goodname,price,pricture,number,remain,goodstate)" + " values(#{goodname},#{price},#{pricture},#{number},#{remain},#{goodstate})")
@@ -15,4 +17,8 @@ public interface GoodMapper {
 
     @Update("update good set goodname=#{goodname},price=#{price},pricture=#{pricture},number=#{number},remain=#{remain},goodstate=#{goodstate} where id=#{id}")
     void save(Good good);
+    @Select("select * from good where goodname=#{goodName}")
+    ArrayList<Good> findByGoodName(String goodName);
+    @Select("select * from good")
+    ArrayList<Good> findAll();
 }

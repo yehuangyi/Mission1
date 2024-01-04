@@ -6,6 +6,8 @@ import com.yhy.mission1.Service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class GoodServiceImpl implements GoodService {
     @Autowired
@@ -28,5 +30,15 @@ public class GoodServiceImpl implements GoodService {
     @Override
     public void save(Good good) {
         goodMapper.save(good);
+    }
+
+    @Override
+    public ArrayList<Good> findByGoodName(String goodName) {
+        return goodMapper.findByGoodName(goodName);
+    }
+
+    @Override
+    public ArrayList<Good> findAll() {
+        return goodMapper.findAll();
     }
 }

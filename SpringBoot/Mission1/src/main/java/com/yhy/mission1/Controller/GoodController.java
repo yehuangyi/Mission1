@@ -6,6 +6,8 @@ import com.yhy.mission1.Service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("/good")
 public class GoodController {
@@ -35,7 +37,6 @@ public class GoodController {
 
     @PutMapping("/updata")
     public Result updataGood(Good good){
-        System.out.println(good);
         Good g = goodService.findById(good.getId());
         System.out.println(g);
         if (g == null){
@@ -46,5 +47,26 @@ public class GoodController {
         }
     }
 
+    @GetMapping("/findByGoodName")
+    public Result findByGoodName(String goodName){
+        ArrayList<Good> goods = goodService.findByGoodName(goodName);
+        if (goods == null){
+            return new Result(0,"这个商品不存在！",goods);
+        }else {
+            return new Result(1,"找到该商品！",goods);
+
+        }
+    }
+
+    @GetMapping("/findAll")
+    public Result findAll(){
+        ArrayList<Good> goods = goodService.findAll();
+        if (goods == null){
+            return new Result(0,"这个商品不存在！",goods);
+        }else {
+            return new Result(1,"找到该商品！",goods);
+
+        }
+    }
 
 }
