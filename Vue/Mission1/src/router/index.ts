@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Register from '@/Components/Register.vue';
 import Login from '@/Components/Login.vue';
+import Admin from '@/Components/Admin.vue';
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -17,6 +18,10 @@ const router = createRouter({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/admin',
+      component: Admin
     }
   ]
 });

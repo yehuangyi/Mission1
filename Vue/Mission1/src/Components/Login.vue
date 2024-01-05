@@ -20,7 +20,8 @@
     </div>
   </template>
   
-  <script lang="ts">
+<script lang="ts">
+import axios from 'axios';
   export default {
     data() {
       return {
@@ -29,12 +30,32 @@
       };
     },
     methods: {
-      login() {
-        // 在这里编写登录逻辑，可以通过发送请求到后端验证用户名和密码
-        // 如果登录成功，可以进行页面跳转或其他操作
-        console.log('用户名:', this.username);
-        console.log('密码:', this.password);
-      },
+      async login() {
+      try {
+        // 发送登录请求到后端
+        const response = await axios.post('/api/login', {
+          username: this.username,
+          password: this.password
+        });
+
+        // 假设后端返回的数据中有一个 success 字段表示登录是否成功
+        if (response.data.success) {
+          // 登录成功，执行页面跳转到 'Admin.vue' 组件
+          this.$router.push('/admin');
+        } else {
+          // 登录失败，处理失败情况
+          console.log('登录失败:', response.data.message);
+        }
+      } catch (error) {
+        // 处理请求错误
+      if (typeof error === 'string') {
+      console.log('请求错误:', error);
+       } else {
+      console.log('请求错误:', (error as Error).message);
+      }
+      }
+    },
+
       goToRegister() {
       // 在这里进行页面跳转到注册页面的操作
       this.$router.push('/register');
